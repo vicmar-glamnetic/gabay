@@ -29,6 +29,24 @@ money: contributions, withholding tax, net pay, separation and final pay.
 https://gabay-site.vercel.app
 ```
 
+**Pricing** — Free · **Launch date** — 07/26/2026
+
+**Platforms** — tick **Web** and **Android**. Leave iOS unticked until it is
+actually on the App Store; a platform badge that leads nowhere costs more
+credibility on a maker directory than a shorter list does.
+
+**Tags**
+
+```
+payroll, payslip, philippines, government, offline-first, benefits, labor-rights, tax
+```
+
+**Square logo** — upload `assets/icon.png` (1024x1024, full bleed, no alpha).
+Not `logo/gabay-appicon-square.png`: that is 288px with its corners already
+rounded, so it double-rounds inside the directory's own rounded card.
+
+**Direct download** — https://expo.dev/artifacts/eas/v-JUXEdk9IExeShE5M5zjxvlwTuduQBtX-DMCe8ORAU.apk
+
 **Description**
 
 ```
