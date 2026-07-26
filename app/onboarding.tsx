@@ -4,6 +4,7 @@ import { Pressable, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Jeepney } from "../components/Illustrations";
+import { Wordmark } from "../components/Wordmark";
 import { Button, Callout, Card, Txt } from "../components/ui";
 import { t } from "../lib/i18n";
 import { requestNotificationPermission } from "../lib/notifications";
@@ -93,7 +94,7 @@ export default function Onboarding() {
             <View style={{ alignItems: "center", paddingBottom: th.space.sm }}>
               <Jeepney size={180} />
             </View>
-            <Txt variant="wordmark">{t("app.wordmark")}</Txt>
+            <Wordmark size={34} />
             <Txt variant="display">
               The peso figure, the rule behind it, and what to bring to the office.
             </Txt>

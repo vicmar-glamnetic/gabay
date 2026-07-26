@@ -7,6 +7,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { AlamMoBa } from "../../components/AlamMoBa";
 import { Banderitas, MagnifyPaper, PayEnvelope } from "../../components/Illustrations";
 import { Screen } from "../../components/Screen";
+import { Wordmark } from "../../components/Wordmark";
 import { Callout, Card, ListRow, Rule, SectionHead, Txt } from "../../components/ui";
 import { nextPayday, PAYDAY_CAVEAT } from "../../lib/data/payday";
 import { DEFAULT_SHORTCUTS, SHORTCUTS_BY_ROLE } from "../../lib/data/calculators";
@@ -49,8 +50,8 @@ export default function HomeTab() {
 
   return (
     <Screen contentStyle={{ paddingTop: insets.top + th.space.md }}>
-      <View style={{ gap: 2 }}>
-        <Txt variant="wordmark">{t("app.wordmark")}</Txt>
+      <View style={{ gap: th.space.xs }}>
+        <Wordmark />
         <Txt variant="small">{t("app.tagline")}</Txt>
       </View>
 
