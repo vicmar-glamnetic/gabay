@@ -231,6 +231,11 @@
           <span class="dl-name">App Store</span>
           <span class="dl-note">Submitted — in review</span>
         </span>
+        <a class="dl" id="dl-apk" href="#" data-needs-url>
+          <span class="dl-kind">Android</span>
+          <span class="dl-name">Download APK</span>
+          <span class="dl-note">Install directly</span>
+        </a>
         <span class="dl disabled">
           <span class="dl-kind">Android</span>
           <span class="dl-name">Google Play</span>
@@ -241,6 +246,12 @@
         The web build carries the launch while the store submissions are in review. It is the
         same codebase and the same figures.
       </p>
+      <div class="callout" style="margin-top:18px">
+        <strong>Installing the APK.</strong> Android will warn you before installing an app
+        from outside the Play Store, and ask you to allow installs from your browser. That
+        warning is normal for a direct download — but only ever accept it for a file you
+        fetched from this page. Once Gabay is on Play, use that instead: it updates itself.
+      </div>
     </div>
   </section>
 
@@ -292,10 +303,11 @@
   var LINKS = {
     web: "https://gabay-app-beta.vercel.app",
     repo: "https://github.com/vicmar-glamnetic/gabay",
+    apk: "",   // EAS build artifact URL — see npm run build:android
   };
 
   document.querySelectorAll("[data-needs-url]").forEach(function (el) {
-    var key = el.id === "repo-link" ? "repo" : "web";
+    var key = el.id === "repo-link" ? "repo" : el.id === "dl-apk" ? "apk" : "web";
     if (LINKS[key]) {
       el.href = LINKS[key];
       el.removeAttribute("data-needs-url");
