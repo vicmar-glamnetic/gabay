@@ -1,5 +1,7 @@
 # Gabay
 
+**Live:** [gabay-site.vercel.app](https://gabay-site.vercel.app) · **App:** [gabay-app-beta.vercel.app](https://gabay-app-beta.vercel.app)
+
 **Sahod, benepisyo, at papeles sa isang lugar.**
 
 A Philippine payroll, benefits, rights and government transactions reference tool.
@@ -12,7 +14,28 @@ npm run typecheck
 npm start         # Expo dev server
 npm run web
 npm run build:web # static export to dist/
+
+npm run check:links  # fetch every URL the app ships (needs network)
+npm run deploy:app   # build + unnest assets + deploy to Vercel
+npm run deploy:site  # deploy web/ landing page to Vercel
 ```
+
+## Deploying the web build
+
+`expo export` needs two fixes before it will run on Vercel, both handled by
+`npm run deploy:app`:
+
+1. **`scripts/unnest-assets.mjs`** — Metro derives an asset's export path from
+   where its source file lives, so anything shipped inside a package lands under
+   `assets/node_modules/…`. Vercel excludes `node_modules` from every upload and
+   `.vercelignore` does not override it, so those files never ship. The script
+   moves them and rewrites the references.
+2. **`cleanUrls`** — the export writes `.html` files, so without it every deep
+   link 404s, and expo-router's prefetch surfaces that as an uncaught
+   `NetworkError` on pages that otherwise look fine.
+
+Fonts are vendored into `assets/fonts` for the same reason, which also ships 6
+files instead of the 51 the `@expo-google-fonts` packages carry.
 
 ## Architecture
 
