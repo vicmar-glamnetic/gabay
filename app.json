@@ -1,0 +1,47 @@
+{
+  "expo": {
+    "name": "Gabay",
+    "slug": "gabay",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "gabay",
+    "userInterfaceStyle": "automatic",
+    "backgroundColor": "#E9EDE6",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "ph.gabay.app"
+    },
+    "android": {
+      "package": "ph.gabay.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#0E5744"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      "expo-sharing",
+      "expo-status-bar",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#E9EDE6",
+          "dark": { "backgroundColor": "#0F1713" }
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#0E5744"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
