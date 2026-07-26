@@ -1,13 +1,3 @@
-import {
-  Roboto_400Regular,
-  Roboto_500Medium,
-  Roboto_700Bold,
-} from "@expo-google-fonts/roboto";
-import {
-  RobotoMono_400Regular,
-  RobotoMono_500Medium,
-  RobotoMono_700Bold,
-} from "@expo-google-fonts/roboto-mono";
 import { useFonts } from "expo-font";
 import { Stack, usePathname, useRouter } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
@@ -25,13 +15,20 @@ SplashScreen.preventAutoHideAsync().catch(() => {});
 
 export default function RootLayout() {
   // Keys match `fonts` in lib/theme/tokens.ts — change both together.
+  //
+  // The .ttf files are vendored into assets/fonts rather than imported from
+  // @expo-google-fonts. Vercel excludes every `node_modules` path from an
+  // upload, and the package-sourced assets export to
+  // assets/node_modules/@expo-google-fonts/... — so on the web build they
+  // 404ed and the app rendered in a fallback face. Vendoring also ships 6
+  // files instead of the 51 those packages carry.
   const [fontsLoaded] = useFonts({
-    Roboto: Roboto_400Regular,
-    RobotoMedium: Roboto_500Medium,
-    RobotoBold: Roboto_700Bold,
-    RobotoMono: RobotoMono_400Regular,
-    RobotoMonoMedium: RobotoMono_500Medium,
-    RobotoMonoBold: RobotoMono_700Bold,
+    Roboto: require("../assets/fonts/Roboto-Regular.ttf"),
+    RobotoMedium: require("../assets/fonts/Roboto-Medium.ttf"),
+    RobotoBold: require("../assets/fonts/Roboto-Bold.ttf"),
+    RobotoMono: require("../assets/fonts/RobotoMono-Regular.ttf"),
+    RobotoMonoMedium: require("../assets/fonts/RobotoMono-Medium.ttf"),
+    RobotoMonoBold: require("../assets/fonts/RobotoMono-Bold.ttf"),
   });
 
   const hydrate = useAppStore((s) => s.hydrate);
