@@ -281,3 +281,23 @@ a.dl:hover { border-color: var(--accent); background: var(--accent-soft); }
   .band { padding: 48px 0; }
   .nav nav { gap: 14px; }
 }
+
+/* ------------------------------- brand ------------------------------- */
+
+.brand {
+  display: flex; align-items: center; gap: 10px; text-decoration: none;
+  color: var(--ink);
+}
+.brand img { height: 30px; width: 30px; border-radius: 8px; display: block; }
+
+.hero-icon {
+  width: 76px; height: 76px; border-radius: 18px;
+  display: block; margin-bottom: 22px;
+}
+
+.foot-mark { width: 30px; height: 30px; border-radius: 8px; display: block; }
+
+@media (max-width: 640px) {
+  .brand img { height: 26px; width: 26px; }
+  .hero-icon { width: 62px; height: 62px; }
+}

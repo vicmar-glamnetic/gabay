@@ -9,17 +9,20 @@
     "backgroundColor": "#E9EDE6",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "ph.gabay.app"
+      "bundleIdentifier": "ph.gabay.app",
+      "icon": "./assets/icon.png"
     },
     "android": {
       "package": "ph.gabay.app",
       "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#0E5744"
       }
     },
     "web": {
       "bundler": "metro",
-      "output": "static"
+      "output": "static",
+      "favicon": "./assets/favicon.png"
     },
     "plugins": [
       "expo-router",
@@ -29,19 +32,33 @@
       [
         "expo-splash-screen",
         {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 180,
+          "resizeMode": "contain",
           "backgroundColor": "#E9EDE6",
-          "dark": { "backgroundColor": "#0F1713" }
+          "dark": {
+            "backgroundColor": "#0F1713"
+          }
         }
       ],
       [
         "expo-notifications",
         {
+          "icon": "./assets/notification-icon.png",
           "color": "#0E5744"
         }
       ]
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "30791537-007f-4f16-9dab-a6441d7f0775"
+      }
+    },
+    "owner": "koolice234",
+    "icon": "./assets/icon.png"
   }
 }
